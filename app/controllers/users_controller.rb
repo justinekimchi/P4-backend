@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     def index
         @users= User.all
-        render json: @users.as_json(include: {movies:{}})
+        render json: @users.as_json(include: {movies:{}, user_movies:{}})
     end
 
     def show
@@ -14,6 +14,12 @@ class UsersController < ApplicationController
         @user = User.new(username: params[:username])
         user_validation
     end
+
+    # def update
+    #     user = User.find(params[:id])
+    #     user.update(user_params)
+    #     render json: user
+    # end
 
     def destroy
         @user=User.find(params[:id])
@@ -31,4 +37,8 @@ class UsersController < ApplicationController
             render json: {errors: @user.errors.messages}
         end
     end
+
+    # def user_params
+    #     params.require(:user).permit()
+    # end
 end

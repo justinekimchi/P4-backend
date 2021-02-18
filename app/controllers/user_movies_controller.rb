@@ -1,7 +1,18 @@
 class UserMoviesController < ApplicationController
+    def index
+        user_movies = UserMovie.all
+        render json: user_movies.as_json
+    end
+
     def create
         @movie_list = UserMovie.new(fetch_params)
         movie_list_validation
+    end
+
+    def update
+        user_movie = UserMovie.find(params[:id])
+        user_movie.update(fetch_params)
+        render json: user_movie
     end
 
     def destroy
@@ -13,7 +24,7 @@ class UserMoviesController < ApplicationController
     private
 
     def fetch_params
-        params.require(:movie_list).permit(:user_id, :movie_id)
+        params.require(:user_movie).permit(:user_id, :movie_id, :user_scream_rating)
     end
 
     def movie_list_validation
