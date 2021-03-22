@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Flat-tie Kreuger's Horror Emporium
+> Welcome! This is the back-end of Flat-tie Kreuger's Horror Emporium, a React and Ruby on Rails application. If you haven't done so yet, check out more information (and set up instructions) in the front-end repo (https://github.com/thequeenbeebs/p4-frontend)
